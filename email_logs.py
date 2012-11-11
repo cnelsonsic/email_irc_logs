@@ -39,10 +39,11 @@ def main():
         filename = LOGFILE.format(logdir=LOGDIR, channel=c, date=datetime.date.today())
         try:
             with open(filename, "r") as f:
-                data = f.read()
+                data = f.readlines()
         except IOError as exc:
-            data = "ERROR: " + exc.strerror
-        BODY.append(data)
+            data = ["ERROR: " + exc.strerror]
+        for line in data:
+            BODY.append(" "+line)
 
     # Assemble the BODY into a proper string.
     BODY = '\n'.join(BODY)
