@@ -26,5 +26,6 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
-# Custom configs
+# Custom/private files.
 config.*.py
+cronjob.sh
