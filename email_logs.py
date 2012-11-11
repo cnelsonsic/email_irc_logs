@@ -4,7 +4,7 @@ import datetime
 import smtplib
 from email.mime.text import MIMEText
 
-# IMPORTANT: This script expects a python file with these globals set.
+# These are overridden by command line arguments below.
 from config import FROM, HOST, PORT, USER, PASSWORD, TO, SUBJECT,\
                         LOGDIR, CHANNELS, CHANNEL_HEADER, SSL
 
