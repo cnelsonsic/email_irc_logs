@@ -60,7 +60,7 @@ if __name__ == "__main__":
     parser.add_argument('--logdir', default=None, help='')
     parser.add_argument('--subject', default=None, help='')
     parser.add_argument('--channel-header', default=None, help='')
-    parser.add_argument('--channels', default=None, nargs='?', help='')
+    parser.add_argument('--channels', default=None, nargs='+', help='')
     args = parser.parse_args()
 
     # Set globals based on arguments passed.
