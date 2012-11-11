@@ -37,9 +37,12 @@ def main():
         BODY.append("")
 
         filename = LOGFILE.format(logdir=LOGDIR, channel=c, date=datetime.date.today())
-        with open(filename, "r") as f:
-            data = f.read()
-            BODY.append(data)
+        try:
+            with open(filename, "r") as f:
+                data = f.read()
+        except IOError as exc:
+            data = "ERROR: " + exc.strerror
+        BODY.append(data)
 
     # Assemble the BODY into a proper string.
     BODY = '\n'.join(BODY)
